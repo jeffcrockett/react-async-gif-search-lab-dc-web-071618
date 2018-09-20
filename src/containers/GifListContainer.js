@@ -8,10 +8,7 @@ export default class GifListContainer extends React.Component {
         ]
     }
 
-    handleFormSubmit = (e) => {
-        e.preventDefault()
-        const input = e.target.children[0].value
-       
+    handleFormSubmit = (input) => {
         fetch(`http://api.giphy.com/v1/gifs/search?q=${input}&api_key=dc6zaTOxFJmzC&rating=g`).then(res => res.json()).then(json => {
             console.log(json)
         this.setState({

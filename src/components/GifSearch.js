@@ -18,7 +18,8 @@ export default class GifSearch extends React.Component{
     render() {
         return(
             <div>Find gifs
-                <form onSubmit={this.props.handleFormSubmit}>
+                <form onSubmit={(e) => {e.preventDefault();
+                    this.props.handleFormSubmit(this.state.value)}}>
                 <input onKeyUp={this.handleChange} type='text'/>
                 <input type="submit" value="Submit"/>
                 </form>
